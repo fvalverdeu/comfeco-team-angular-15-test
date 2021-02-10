@@ -12,16 +12,22 @@ import { AppComponent } from './bootstrap/app.component';
 // Imports material
 import { material } from "./material/material";
 import { HomeComponent } from './pages/home/home.component';
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from './components/components.module';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    RouterModule,
+    ComponentsModule,
+    ServicesModule,
     material
   ],
   providers: [],

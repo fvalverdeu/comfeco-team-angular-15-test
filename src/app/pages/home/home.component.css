@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.character {
+  margin: 20px 4%;
+}

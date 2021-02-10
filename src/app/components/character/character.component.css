@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+
+:host * {
+  /* outline: 1px solid chartreuse; */
+}
+
+h1 {
+  height: 70px;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: 70px;
+  color: blueviolet;
+}
+
+.content-img {
+  text-align: center;
+  padding: 0;
+}
+
+.info {
+  padding: 10px;
+  height: 100px;
+}
+
+.info p {
+  width: 100%;
+  margin: 4px auto;
+  text-align: left;
+  font-size: 1.05rem;
+}
+
+.info p span {
+  font-size: 1.25rem;
+  font-weight: bold;
+}

@@ -1,0 +1,98 @@
+<div class="container mt-5">
+    
+    <!-- Spinner Loading -->
+    <div *ngIf="loading" class="row justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Alerta de error -->
+    <div *ngIf="!loading && error" class="alert alert-danger text-center mx-auto">
+        {{ error_message }}
+    </div>
+
+    <!-- Contenido de página contacto -->
+    <main *ngIf="!loading && !error" class="zoomIn">
+
+        <p class="display-4 text-center mb-5">Contacto</p>
+
+        <div class="row">
+
+            <div *ngFor="let user of github_users" class="col-md-6 col-lg-4 my-3">
+
+                <!-- Tarjetas de contacto -->
+                <div class="card pt-3 pb-2 border-0 shadow">
+                    
+                    <div class="container">
+
+                        <div class="row mb-2">
+    
+                            <div class="col-5 my-auto p-0 text-center">
+
+                                <!-- Profile image -->
+                                <img [src]="user.avatar_url" alt="" height="100" width="100" class="rounded-circle">
+
+                                <div class="col-12 text-center mt-2 ">
+                                    <small class="text-muted">Followers: {{ user.followers }} </small>
+                                </div><!-- Followers -->
+
+                            </div>
+    
+                            <div class="col-7 my-auto">
+
+                                <div>
+
+                                    <h4 class="m-0">
+                                        <strong> {{ user.name ? user.name : user.login }} </strong>
+                                    </h4><!-- Username -->
+
+                                    <div *ngIf="user.location" class="d-flex align-items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" class="" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                                        <h5 class="m-0 ml-1">
+                                            {{ user.location }}
+                                        </h5>
+                                    </div><!-- Location -->
+
+                                    <span class="m-0 text-muted">
+                                        <small>Team 15 - Comfeco</small>
+                                    </span>
+                                    
+                                </div><!-- User info -->
+
+                                <div class="col-6 d-flex justify-content-between mt-2 p-0 ">
+
+                                    <a *ngIf="user.linkedin" [href]="user.linkedin | linkedinUrl" target="_blank">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a><!-- Linkedin -->
+
+                                    <a *ngIf="user.twitter_username" [href]="user.twitter_username | twitterUrl" target="_blank">
+                                        <i class="fab fa-twitter"></i>
+                                    </a><!-- Twitter -->
+
+                                    <a *ngIf="user.html_url" [href]="user.html_url" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a><!-- GitHub -->
+
+                                    <a *ngIf="user.blog" [href]="user.blog" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a><!-- Website -->
+
+                                </div><!-- Social media -->
+
+                            </div>
+    
+                        </div>
+    
+                    </div>
+        
+                </div>
+    
+            </div>
+
+        </div>
+    </main>
+
+</div>
+
+

@@ -13,9 +13,14 @@ import { AppComponent } from './bootstrap/app.component';
 // Imports material
 import { material } from "./material/material";
 import { HomeComponent } from './pages/home/home.component';
+
 import { ContactComponent } from './pages/contact/contact.component';
 import { TwitterUrlPipe } from './pipes/twitter-url.pipe';
 import { LinkedinUrlPipe } from './pipes/linkedin-url.pipe';
+
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from './components/components.module';
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { LinkedinUrlPipe } from './pipes/linkedin-url.pipe';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    material,
+    RouterModule,
+    ComponentsModule,
+    ServicesModule,
+    material
   ],
   providers: [],
   bootstrap: [AppComponent]

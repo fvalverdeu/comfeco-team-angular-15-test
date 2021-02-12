@@ -1,1 +1,3 @@
-<button mat-raised-button color="primary">Click me!</button>
+<div class="character" *ngFor="let item of characters">
+  <app-character [character]="item"></app-character>
+</div>
